@@ -61,7 +61,6 @@ function addImages(ev){
       wPressCountter = 1
       newOurWorksGallery.forEach(el => addSrc(el))
       $buttonLoad.show()
-      console.log(ev.target.dataset.filter)
       $('.loader').hide()
       if(newOurWorksGallery.length > 35) $buttonLoad.hide()
    }, 2000) 
@@ -77,7 +76,10 @@ function addImages(ev){
 //изотоп---------------------------------------------------------------------
 const $filterButtons = $('.our-works__nav ul')
 const $filterItems = $('.our-works__items')
-
+$('.tab').on('click', (ev) =>{
+ $(ev.target).addClass('border-decor')
+.siblings().removeClass('border-decor')
+})
 
 $filterButtons.on('click', filterImg)
 
@@ -94,10 +96,7 @@ function filterImg(ev){
 
 $('.masonry-gallery__wrapper').masonry({
    itemSelector:".masonry-gallery__item",
-   columnWidth: 10,
-   percentPosition: true,
-   fitWidth: true,
-   gutter: 10
+   columnWidth: 2    
 })
 
 //slider----------------------------------------------------------------------

@@ -20,7 +20,7 @@
 }
 
 .header {
-   background-image: url(../images/StepProjectHam/Sections-background/section1.jpg);
+   background-image: url(../images/StepProjectHam/Sections-background/section-1.jpg);
    background-repeat: no-repeat; 
    background-position: bottom;
    background-attachment: fixed;
@@ -75,6 +75,10 @@
    color: #18cfab;
    font-weight: bold;
 }
+.tab.border-decor{
+   border-top: 3px solid #18CFAB;
+}
+
 
 .header__menu a { 
    opacity: 0.6; 
