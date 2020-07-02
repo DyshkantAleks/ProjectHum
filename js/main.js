@@ -15,7 +15,7 @@ let $tabText = $(`#${ev.target.getAttribute('data-id')}`)
 //Our Amazing Work---------------------------------------------------------------------
 //начальная подгрузка излображений
 const ourWorksGallery = document.querySelectorAll('.our-works__item')
-let webCountter = 1
+let webCounter = 1
 let grafCountter = 1
 let landCountter = 1
 let wPressCountter = 1
@@ -26,9 +26,9 @@ function addSrc(el){
       grafCountter++;
       break;
 
-      case 'web': el.querySelector('img').src = `./images/StepProjectHam/web-design${webCountter}.jpg`
+      case 'web': el.querySelector('img').src = `./images/StepProjectHam/web-design${webCounter}.jpg`
       
-      webCountter++
+      webCounter++
       break;
       
       case 'landing': el.querySelector('img').src = `./images/StepProjectHam/landing-page${landCountter}.jpg`
@@ -55,7 +55,7 @@ function addImages(ev){
    setTimeout(()=>{
       ourWorksGallery.forEach(el => el.after(el.cloneNode(true)))
       const newOurWorksGallery = document.querySelectorAll('.our-works__item')
-      webCountter = 1
+      webCounter = 1
       grafCountter = 1
       landCountter = 1
       wPressCountter = 1
@@ -95,8 +95,11 @@ function filterImg(ev){
 //masonry---------------------------------------------------------------------
 
 $('.masonry-gallery__wrapper').masonry({
-   itemSelector:".masonry-gallery__item",
-   columnWidth: 2    
+   itemSelector: '.item',
+   columnWidth: 10,
+   singleMode: false,
+   percentPosition: true,
+  gutter: 5,   
 })
 
 //slider----------------------------------------------------------------------
@@ -159,7 +162,7 @@ $('.slider__navigation-items').slick({
  $('.slider__items').slick({
    asNavFor: '.slider__navigation-items',
    arrows:false,
-   speed:1500,
+   speed:1000,
    easing: 'ease',  
    initialSlide: 1,
  })
